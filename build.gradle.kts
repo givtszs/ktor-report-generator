@@ -11,10 +11,11 @@ group = "ua.edu.znu"
 version = "0.0.1"
 
 application {
-    mainClass = "ua.edu.znu.ApplicationKt"
+    mainClass = "ua.edu.znu.MainKt"
 }
 
 dependencies {
+    // Ktor server
     implementation("io.ktor:ktor-server-cors")
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-host-common")
@@ -26,6 +27,9 @@ dependencies {
     // Kotlinx Serialization
     implementation("io.ktor:ktor-serialization-kotlinx-json")
     implementation("io.ktor:ktor-serialization-jackson")
+
+    // Koin
+    implementation("io.insert-koin:koin-ktor:4.0.3")
 
     // Jasper Reports
     implementation("net.sf.jasperreports:jasperreports:6.21.5") {
