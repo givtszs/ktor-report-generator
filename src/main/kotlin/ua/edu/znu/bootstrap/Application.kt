@@ -9,4 +9,6 @@ fun Application.module() {
     configureMonitoring()
     configureSerialization()
     configureRouting()
+    configureDoubleReceive()
+    configureSqliteDatabase()
 }

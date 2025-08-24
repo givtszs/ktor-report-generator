@@ -23,10 +23,14 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging")
     implementation("io.ktor:ktor-server-content-negotiation")
     implementation("io.ktor:ktor-server-netty")
+    implementation("io.ktor:ktor-server-double-receive")
 
     // Kotlinx Serialization
     implementation("io.ktor:ktor-serialization-kotlinx-json")
     implementation("io.ktor:ktor-serialization-jackson")
+
+    // Jackson
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.+")
 
     // Koin
     implementation("io.insert-koin:koin-ktor:4.0.3")
@@ -38,9 +42,12 @@ dependencies {
         exclude(group = "eclipse")
     }
 
-    // Jackson
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.+")
-
+    // Database
+    implementation("org.xerial:sqlite-jdbc:3.49.1.0")
+    implementation("org.jetbrains.exposed:exposed-core:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.61.0")
     // Fonts
     implementation(files("fonts/jasperreports-fonts.jar"))
 

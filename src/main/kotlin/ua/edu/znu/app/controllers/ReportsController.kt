@@ -2,7 +2,6 @@ package ua.edu.znu.app.controllers
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import ua.edu.znu.app.dto.SettlementReportDto
 import ua.edu.znu.app.request_payloads.SettlementReportPayload
 import ua.edu.znu.app.services.ReportsGeneratorService
 import java.time.LocalDate
