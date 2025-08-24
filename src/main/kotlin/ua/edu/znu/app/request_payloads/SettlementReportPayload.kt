@@ -1,12 +1,11 @@
 package ua.edu.znu.app.request_payloads
 
-import ua.edu.znu.app.dto.ApplicationDataDto
+import ua.edu.znu.app.dto.SettlementReportDto
 
 data class SettlementReportPayload(
     val data: Metadata,
 )
 
 data class Metadata(
-    val metadata: ApplicationDataDto,
-    val settlementDate: String,
+    val metadata: SettlementReportDto,
 )

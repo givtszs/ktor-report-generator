@@ -12,20 +12,13 @@ class ReportsGeneratorService(private val jasperReportsService: JasperReportsSer
         settlementReportDto: SettlementReportDto,
     ): ByteArray {
         return try {
-            val parameters = mapOf(
-                "firstName" to settlementReportDto.firstName,
-                "secondName" to settlementReportDto.secondName,
-                "lastName" to settlementReportDto.lastName,
-                "faculty" to settlementReportDto.faculty,
-                "course" to settlementReportDto.course,
-                "educationLevel" to settlementReportDto.educationLevel,
-                "dormitory" to settlementReportDto.dormitory,
-                "room" to settlementReportDto.room,
-                "fluorographyLastDate" to settlementReportDto.fluorographyLastDate,
-                "settlementDate" to settlementReportDto.settlementDate,
-            )
+            val parameters = settlementReportDto.toMap()
 
-            val jasperPrint = JasperFillManager.fillReport(settlementReport, parameters, JREmptyDataSource(1))
+            val jasperPrint = JasperFillManager.fillReport(
+                settlementReport,
+                parameters,
+                JREmptyDataSource(1)
+            )
 
             jasperReportsService.exportToPdf(jasperPrint)
         } catch (e: Exception) {

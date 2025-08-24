@@ -11,6 +11,7 @@
     <parameter name="room" class="java.lang.String"/>
     <parameter name="fluorographyLastDate" class="java.lang.String"/>
     <parameter name="settlementDate" class="java.lang.String"/>
+    <parameter name="housingRate" class="java.lang.String"/>
     <detail>
         <band height="802" splitType="Stretch">
             <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -204,12 +205,12 @@
                 <text><![CDATA[Прослухати лекцію-інструктаж. Отримати довідку. Графік роботи: понеділок-пятниця, початок лекції в 9.00, 11.00, 15.00 (жива черга)]]></text>
             </staticText>
             <rectangle>
-                <reportElement x="20" y="371" width="120" height="50" uuid="8f26e152-dea5-4b13-a28c-1e28debe8ce0">
+                <reportElement x="20" y="371" width="120" height="69" uuid="8f26e152-dea5-4b13-a28c-1e28debe8ce0">
                     <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
                 </reportElement>
             </rectangle>
             <staticText>
-                <reportElement x="20" y="371" width="120" height="50" uuid="7affc512-cfcc-4e92-af55-adc35d0230d5">
+                <reportElement x="20" y="371" width="120" height="68" uuid="7affc512-cfcc-4e92-af55-adc35d0230d5">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -223,7 +224,7 @@
                 <reportElement x="140" y="371" width="260" height="50" uuid="4c743c35-a4f4-49c5-ae76-666b60b66807"/>
             </rectangle>
             <rectangle>
-                <reportElement x="400" y="371" width="129" height="50" uuid="a31374ef-a370-4071-9a73-43de1f87bbe8">
+                <reportElement x="400" y="371" width="129" height="69" uuid="a31374ef-a370-4071-9a73-43de1f87bbe8">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
             </rectangle>
@@ -235,25 +236,25 @@
                 <text><![CDATA["Запорізький національний університет" р\р UA 618201720313281001202002045 в ДКСУ у місті Київ ЄДРПОУ 0212524]]></text>
             </staticText>
             <rectangle>
-                <reportElement x="20" y="461" width="250" height="20" uuid="9ad13630-c135-4504-8ca3-3f0acbeee16e"/>
+                <reportElement x="20" y="480" width="250" height="20" uuid="9ad13630-c135-4504-8ca3-3f0acbeee16e"/>
             </rectangle>
             <rectangle>
-                <reportElement x="270" y="461" width="130" height="20" uuid="5286cc6d-6af9-42c0-93dc-6d618b76db6a"/>
+                <reportElement x="270" y="480" width="130" height="20" uuid="5286cc6d-6af9-42c0-93dc-6d618b76db6a"/>
             </rectangle>
             <rectangle>
-                <reportElement x="400" y="461" width="130" height="21" uuid="6541e5fb-16a5-4ef1-8393-3bdce5b7a2dd"/>
+                <reportElement x="400" y="480" width="130" height="21" uuid="6541e5fb-16a5-4ef1-8393-3bdce5b7a2dd"/>
             </rectangle>
             <rectangle>
-                <reportElement x="20" y="481" width="250" height="30" uuid="86ad4fb4-6968-4b1e-b546-12e3a9c25fa4"/>
+                <reportElement x="20" y="500" width="250" height="30" uuid="86ad4fb4-6968-4b1e-b546-12e3a9c25fa4"/>
             </rectangle>
             <rectangle>
-                <reportElement x="270" y="481" width="130" height="30" uuid="3f51c1a6-3f4f-430b-b0d3-df8f52668ce6"/>
+                <reportElement x="270" y="500" width="130" height="30" uuid="3f51c1a6-3f4f-430b-b0d3-df8f52668ce6"/>
             </rectangle>
             <rectangle>
-                <reportElement x="400" y="481" width="130" height="30" uuid="5bfeda41-2a60-4829-bdf8-6f981b8b145a"/>
+                <reportElement x="400" y="500" width="130" height="30" uuid="5bfeda41-2a60-4829-bdf8-6f981b8b145a"/>
             </rectangle>
             <staticText>
-                <reportElement x="20" y="461" width="250" height="19" uuid="7104feb6-0c65-452c-afb0-2faa8a788f30">
+                <reportElement x="20" y="480" width="250" height="19" uuid="7104feb6-0c65-452c-afb0-2faa8a788f30">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -264,7 +265,7 @@
                 <text><![CDATA[Оформлення документів]]></text>
             </staticText>
             <staticText>
-                <reportElement x="270" y="461" width="130" height="19" uuid="b8d4873a-19ca-4231-a87c-7f12bfaaa1bc">
+                <reportElement x="270" y="480" width="130" height="19" uuid="b8d4873a-19ca-4231-a87c-7f12bfaaa1bc">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -275,7 +276,7 @@
                 <text><![CDATA[гурт № 3, каб. 414]]></text>
             </staticText>
             <staticText>
-                <reportElement x="20" y="481" width="250" height="30" uuid="d1d70d97-5cde-4347-99cb-14b41468ccd9">
+                <reportElement x="20" y="500" width="250" height="30" uuid="d1d70d97-5cde-4347-99cb-14b41468ccd9">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -286,7 +287,7 @@
                 <text><![CDATA[Завідувач гуртожитком (поселення)]]></text>
             </staticText>
             <staticText>
-                <reportElement x="270" y="481" width="130" height="30" uuid="4ab05374-9c8f-4887-80e4-9ab0546ac07c">
+                <reportElement x="270" y="500" width="130" height="30" uuid="4ab05374-9c8f-4887-80e4-9ab0546ac07c">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -297,7 +298,7 @@
                 <text><![CDATA[кабінет завідувача гуртожитком]]></text>
             </staticText>
             <staticText>
-                <reportElement x="400" y="481" width="130" height="30" uuid="4c82ff0a-b0b7-406a-8d17-9d73d8153c1e">
+                <reportElement x="400" y="500" width="130" height="30" uuid="4c82ff0a-b0b7-406a-8d17-9d73d8153c1e">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
@@ -308,7 +309,7 @@
                 <text><![CDATA[оформлення, отримання ключа від кімнати]]></text>
             </staticText>
             <staticText>
-                <reportElement x="20" y="533" width="510" height="20" uuid="38a30466-78ae-4e53-b9a8-d866ce702d22"/>
+                <reportElement x="20" y="552" width="510" height="20" uuid="38a30466-78ae-4e53-b9a8-d866ce702d22"/>
                 <textElement textAlignment="Center">
                     <font fontName="Times New Roman" size="11"/>
                 </textElement>
@@ -406,7 +407,7 @@
                     <font fontName="Times New Roman" size="14"/>
                     <paragraph leftIndent="2"/>
                 </textElement>
-                <textFieldExpression><![CDATA["Дата останнього щеплення: " + $P{fluorographyLastDate}]]></textFieldExpression>
+                <textFieldExpression><![CDATA["Дата останньої флюорографії: " + $P{fluorographyLastDate}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="187" y="30" width="283" height="20" uuid="d6e6a02f-307f-4eca-81e8-733ddc5be544">
@@ -418,6 +419,22 @@
                     <paragraph leftIndent="2"/>
                 </textElement>
                 <textFieldExpression><![CDATA["(Дата поселення: " + $P{settlementDate} + ")"]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement x="140" y="421" width="260" height="19" uuid="65597177-e89e-4a3a-aa2a-38174b12da90">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+            </rectangle>
+            <textField>
+                <reportElement x="140" y="421" width="260" height="18" uuid="a628dcb9-90a4-4bc6-9b18-1dca8999f873">
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="11"/>
+                    <paragraph leftIndent="2"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Вартість проживання: " + $P{housingRate} + "грн"]]></textFieldExpression>
             </textField>
         </band>
     </detail>
