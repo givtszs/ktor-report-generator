@@ -233,7 +233,7 @@
                 <textElement textAlignment="Center" verticalAlignment="Middle">
                     <font fontName="Times New Roman" size="11"/>
                 </textElement>
-                <text><![CDATA["Запорізький національний університет" р\р UA 618201720313281001202002045 в ДКСУ у місті Київ ЄДРПОУ 0212524]]></text>
+                <text><![CDATA["Запорізький національний університет" р\р UA 618201720313281001202002045 в ДКСУ у місті Київ ЄДРПОУ 02125243]]></text>
             </staticText>
             <rectangle>
                 <reportElement x="20" y="480" width="250" height="20" uuid="9ad13630-c135-4504-8ca3-3f0acbeee16e"/>
@@ -403,7 +403,7 @@
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                 </reportElement>
-                <textElement textAlignment="Left" verticalAlignment="Middle">
+                <textElement textAlignment="Center" verticalAlignment="Middle">
                     <font fontName="Times New Roman" size="14"/>
                     <paragraph leftIndent="2"/>
                 </textElement>
