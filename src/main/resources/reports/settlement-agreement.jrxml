@@ -1,376 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="802" pageHeight="576" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ecd887e8-2df6-43cf-bc06-8e7a49262c91">
-    <property name="ireport.zoom" value="1.0"/>
-    <property name="ireport.x" value="0"/>
-    <property name="ireport.y" value="528"/>
-    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="abiturient_2022"/>
-    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-    <property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="251"/>
-    <property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="742"/>
-    <property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="780"/>
-    <property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="206"/>
-    <style name="table">
-        <box>
-            <pen lineWidth="1.0" lineColor="#000000"/>
-        </box>
-    </style>
-    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
-        <box>
-            <pen lineWidth="0.5" lineColor="#000000"/>
-        </box>
-    </style>
-    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
-        <box>
-            <pen lineWidth="0.5" lineColor="#000000"/>
-        </box>
-    </style>
-    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
-        <box>
-            <pen lineWidth="0.5" lineColor="#000000"/>
-        </box>
-    </style>
-    <parameter name="idPersonSpeciality" class="java.lang.Integer">
-        <defaultValueExpression><![CDATA[1]]></defaultValueExpression>
-    </parameter>
-    <queryString>
-        <![CDATA[SELECT
-    personspeciality.QualificationID AS idQualification,
-    personspeciality.EducationFormID AS idPersonEducationForm,
-    contracts.idContract AS idContract,
-    person.LastName AS LastName,
-    person.FirstName AS FirstName,
-    person.MiddleName AS MiddleName,
-    person.Address AS streetName,
-    personeducationforms.personEducationFormName AS personEducationFormName,
-    qualifications.QualificationName AS QualificationName,
-    streettypes.StreetTypesFullName AS streetTypeName,
-    CASE
-    	WHEN facultets.IDFacultet <= 1654 THEN facultets.FacultetFullName
-		ELSE CONCAT(facultets.FacultetFullName, " Інженерного Інституту")
-	END AS facultet,
-    studyperiods.StudyPeriodName AS StudyPeriodName,
-    studyperiods.CountSemester AS CountSemester,
-    studyperiods.StudyPeriodWordEnd AS StudyPeriodWordEnd,
-    IFNULL(specialities.WordPrice,'') AS WordPrice,
-    IFNULL(specialities.YearPrice,0) AS YearPrice,
-    specialities.IndastryName AS specialityIndastryName,
-    specialities.SpecialityClasifierCode AS specialityClasifierCode,
-    specialities.SpecialityName AS specialityName,
-    IFNULL(specialities.SpecializationsGroupClasifierCode,'') AS  specialityGroupClasifierCode,
-    IFNULL(specialities.SpecializationsGroupName,'') AS specialityGroupName,
-    specialities.SpecialitySpecializationName AS specializationName,
-    specialities.isAccredited as isAccredited,
-    specialities.AccreditationDate as accreditationDate,
-    documents.Series AS documentSeries,
-    documents.Numbers AS documentNumber,
-    documents.Issued AS Issued,
-    persondocumenttypes.PersonDocumentTypesName AS DocumentName,
-
-    contracts.ContractNumber AS ContractNumber,
-    contracts.CustomerAddress AS CustomerAddress,
-    contracts.PerformerDoc AS PerformerDoc,
-    IF(contracts.PerformerFlat IS NULL OR contracts.PerformerFlat LIKE '', person.Apartment, contracts.PerformerFlat)AS PerformerFlat,
-
-	CONCAT_WS(' ', documents.Issued, DATE_FORMAT(documents.DateGet,'%d.%m.%Y')) AS PersonDoc,
-	personNum.Numbers as PersonInn,
-	mobilePhone.Value as PersonPhone,
-
-    CAST(specialities.SemPrice AS CHAR) AS SemPrice,
-
-    SUBSTRING_INDEX(person.HomeNumber,',',1) AS HomeNumber,
-
-    DATE_FORMAT(documents.DateGet,'%d.%m.%Y') AS DateGet,
-
-    DATE_FORMAT(person.Birthday,'%d.%m.%Y')  AS birthday,
-
-    IF(mobilePhone.Value IS NULL OR mobilePhone.Value LIKE '-','',mobilePhone.Value)
-    AS mobilePhone,
-
-    IF(homePhone.Value IS NULL OR homePhone.Value LIKE '-','',homePhone.Value)
-    AS homePhone,
-
-    IF(contracts.PerformerINN IS NULL OR contracts.PerformerINN LIKE '',personNum.Numbers,contracts.PerformerINN)
-    AS PerformerINN,
-
-    IF((contracts.CustomerPhone IS NULL OR contracts.CustomerPhone LIKE ''),mobilePhone.Value,contracts.CustomerPhone)
-    AS CustomerPhone,
-
-    IF((contracts.CustomerINN IS NULL OR contracts.CustomerINN LIKE ''),personNum.Numbers,contracts.CustomerINN)
-    AS CustomerINN,
-
-    IF((contracts.CustomerName IS NULL OR contracts.CustomerName LIKE ''),CONCAT_WS(' ',person.LastName,person.FirstName,person.MiddleName),contracts.CustomerName)
-    AS CustomerName,
-
-
-    IF((contracts.CustomerAddress IS NULL OR contracts.CustomerAddress LIKE ''),1,0)
-    AS CustomerAddressEmpty,
-
-    IF((contracts.CustomerDoc IS NULL OR contracts.CustomerDoc LIKE ''),CONCAT_WS(' ', documents.Issued, DATE_FORMAT(documents.DateGet,'%d.%m.%Y')),contracts.CustomerDoc)
-    AS CustomerDoc,
-
-#    IF(LOCATE('/',contracts.CustomerPaymentDetails)=0 AND LOCATE('!!!',contracts.CustomerPaymentDetails)=0,
-#    	IF( contracts.CustomerPaymentDetails IS NOT NULL AND contracts.CustomerPaymentDetails NOT LIKE '',
-#   		#CONCAT(persondocumenttypes.PersonDocumentTypesName,' / ',contracts.CustomerPaymentDetails),
-#    		contracts.CustomerPaymentDetails,
-#    		CONCAT(persondocumenttypes.PersonDocumentTypesName,' ',documents.Series,' ',documents.Numbers)
-#    	), REPLACE(contracts.CustomerPaymentDetails,'!!!','')
-#    )
-#    AS CustomerPaymentDetails,
-	IF( contracts.CustomerPaymentDetails IS NOT NULL AND contracts.CustomerPaymentDetails NOT LIKE '',
-    		#CONCAT(persondocumenttypes.PersonDocumentTypesName,' / ',contracts.CustomerPaymentDetails),
-    		contracts.CustomerPaymentDetails,
-    		CONCAT(persondocumenttypes.PersonDocumentTypesName,' ',documents.Series,' ',documents.Numbers)
-    	) AS CustomerPaymentDetails,
-
-    IF(person.AddressApartment IS NOT NULL AND person.AddressApartment NOT LIKE '',
-        IFNULL(TRIM(SUBSTRING_INDEX(AddressApartment,';',1)),''),
-        IF(koatuulevel1.idKOATUULevel1 = 135550 OR koatuulevel1.idKOATUULevel1 = 135562 OR koatuulevel1.idKOATUULevel1 = 135607,'', IF(koatuulevel2.idKOATUULevel2 is null, '', koatuulevel1.KOATUULevel1FullName))
-    )AS region,
-
-    IF(person.AddressApartment IS NOT NULL AND person.AddressApartment NOT LIKE '',
-        IFNULL(TRIM(SUBSTRING_INDEX(AddressApartment,';',-1)),''),
-        IF(koatuulevel1.idKOATUULevel1 = 135550 OR koatuulevel1.idKOATUULevel1 = 135562 OR koatuulevel2.idKOATUULevel2 is null, koatuulevel1.KOATUULevel1FullName, IF(person.KOATUUCodeL3ID is null ,koatuulevel2.KOATUULevel2Name, IF(koatuulevel3.KOATUULevel3Type=(SELECT value FROM parametersquery WHERE code=1), koatuulevel2.KOATUULevel2Name, koatuulevel3.KOATUULevel3Name)))
-    )AS city,
-
-    IF(person.AddressApartment IS NOT NULL AND person.AddressApartment NOT LIKE '',
-        IFNULL(TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(AddressApartment,';',2),';',-1)),''),
-        IF(koatuulevel1.idKOATUULevel1 = 135550 OR koatuulevel1.idKOATUULevel1 = 135562,'',  IF(person.KOATUUCodeL3ID is null , '', IF(koatuulevel3.KOATUULevel3Type=(SELECT value FROM parametersquery WHERE code=1), '', SUBSTRING_INDEX(SUBSTRING_INDEX(koatuulevel2.KOATUULevel2Name,'/',1),(SELECT value FROM parametersquery WHERE code=24),1))))
-    )AS cityVillage,
-
-    CASE documents.TypeID
-        WHEN 1 THEN 2
-        WHEN 3 THEN 1
-        WHEN 36 THEN 1
-        WHEN 43 THEN 1
-        WHEN 17 THEN 3
-        WHEN 20 THEN 4
-    END
-    AS priorityORDER
-
-FROM contracts
-    LEFT JOIN personspeciality ON contracts.PersonSpecialityID = personspeciality.idPersonSpeciality
-    LEFT JOIN person ON person.idPerson = personspeciality.PersonID
-    LEFT JOIN personeducationforms ON personeducationforms.idPersonEducationForm = personspeciality.EducationFormID
-    LEFT JOIN specialities ON specialities.idSpeciality = personspeciality.SepcialityID
-    LEFT JOIN facultets ON facultets.IDFacultet = specialities.FacultetID
-    LEFT JOIN studyperiods ON studyperiods.idStudyPeriod=specialities.StudyPeriodID
-    LEFT JOIN qualifications ON personspeciality.QualificationID = qualifications.idQualification
-
-    LEFT JOIN koatuulevel3 ON person.KOATUUCodeID=koatuulevel3.idKOATUULevel3
-    LEFT JOIN koatuulevel2 ON person.KOATUUCodeID=koatuulevel2.idKOATUULevel2 OR koatuulevel3.KOATUULevel2ID=koatuulevel2.idKOATUULevel2
-    LEFT JOIN koatuulevel1 ON person.KOATUUCodeID=koatuulevel1.idKOATUULevel1 OR koatuulevel2.KOATUULevel1ID=koatuulevel1.idKOATUULevel1
-
-    LEFT JOIN koatuutypes AS koatuutypes2 ON koatuutypes2.type=koatuulevel2.KOATUULevel2Type
-    LEFT JOIN koatuutypes AS koatuutypes3 ON koatuutypes3.type=koatuulevel3.KOATUULevel3Type
-
-    LEFT JOIN streettypes ON streettypes.idStreetTypes = person.StreetTypeID
-    LEFT JOIN documents ON documents.PersonID = person.idPerson
-    LEFT JOIN persondocumenttypes ON persondocumenttypes.idPersonDocumentTypes = documents.TypeID
-
-    LEFT JOIN personcontacts AS email ON (email.PersonID = person.idPerson AND email.PersonContactTypeID = 3)
-    LEFT JOIN personcontacts AS mobilePhone ON (mobilePhone.PersonID = person.idPerson AND mobilePhone.PersonContactTypeID = 2)
-    LEFT JOIN personcontacts AS homePhone ON (homePhone.PersonID = person.idPerson AND homePhone.PersonContactTypeID = 1)
-
-    LEFT JOIN (
-        SELECT
-            person.idPerson AS idPerson,
-            documents.Numbers AS Numbers
-        FROM documents
-            LEFT JOIN person ON documents.PersonID = person.idPerson
-        WHERE documents.TypeID = 5
-    ) AS personNum
-    ON personNum.idPerson=person.idPerson
-
-WHERE
-    contracts.PersonSpecialityID = $P{idPersonSpeciality}
-    AND
-    IF(person.IsResident=0, documents.TypeID = 17 OR documents.TypeID = 19, documents.TypeID IN (1, 3, 17, 20, 36, 43, 19))
-ORDER BY priorityORDER
-LIMIT 1]]>
-    </queryString>
-    <field name="idQualification" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="idQualification"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="personspeciality"/>
-    </field>
-    <field name="idPersonEducationForm" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="idPersonEducationForm"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="personspeciality"/>
-    </field>
-    <field name="idContract" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="idContract"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="contracts"/>
-    </field>
-    <field name="LastName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="LastName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="person"/>
-    </field>
-    <field name="FirstName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="FirstName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="person"/>
-    </field>
-    <field name="MiddleName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="MiddleName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="person"/>
-    </field>
-    <field name="streetName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="streetName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="person"/>
-    </field>
-    <field name="personEducationFormName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="personEducationFormName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="personeducationforms"/>
-    </field>
-    <field name="QualificationName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="QualificationName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="qualifications"/>
-    </field>
-    <field name="streetTypeName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="streetTypeName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="streettypes"/>
-    </field>
-    <field name="facultet" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="facultet"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="facultets"/>
-    </field>
-    <field name="StudyPeriodName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="StudyPeriodName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="studyperiods"/>
-    </field>
-    <field name="CountSemester" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="CountSemester"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="studyperiods"/>
-    </field>
-    <field name="StudyPeriodWordEnd" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="StudyPeriodWordEnd"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="studyperiods"/>
-    </field>
-    <field name="WordPrice" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="WordPrice"/>
-    </field>
-    <field name="YearPrice" class="java.lang.Double">
-        <property name="com.jaspersoft.studio.field.label" value="YearPrice"/>
-    </field>
-    <field name="specialityIndastryName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specialityIndastryName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="specialities"/>
-    </field>
-    <field name="specialityClasifierCode" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specialityClasifierCode"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="specialities"/>
-    </field>
-    <field name="specialityName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specialityName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="specialities"/>
-    </field>
-    <field name="specialityGroupClasifierCode" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specialityGroupClasifierCode"/>
-    </field>
-    <field name="specialityGroupName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specialityGroupName"/>
-    </field>
-    <field name="specializationName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="specializationName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="specialities"/>
-    </field>
-    <field name="documentSeries" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="documentSeries"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="documents"/>
-    </field>
-    <field name="documentNumber" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="documentNumber"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="documents"/>
-    </field>
-    <field name="Issued" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="Issued"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="documents"/>
-    </field>
-    <field name="DocumentName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="DocumentName"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="persondocumenttypes"/>
-    </field>
-    <field name="ContractNumber" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="ContractNumber"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="contracts"/>
-    </field>
-    <field name="CustomerAddress" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerAddress"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="contracts"/>
-    </field>
-    <field name="PerformerDoc" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PerformerDoc"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="contracts"/>
-    </field>
-    <field name="PerformerFlat" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PerformerFlat"/>
-    </field>
-    <field name="SemPrice" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="SemPrice"/>
-    </field>
-    <field name="HomeNumber" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="HomeNumber"/>
-    </field>
-    <field name="DateGet" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="DateGet"/>
-    </field>
-    <field name="birthday" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="birthday"/>
-    </field>
-    <field name="mobilePhone" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="mobilePhone"/>
-    </field>
-    <field name="homePhone" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="homePhone"/>
-    </field>
-    <field name="PerformerINN" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PerformerINN"/>
-    </field>
-    <field name="CustomerPhone" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerPhone"/>
-    </field>
-    <field name="CustomerINN" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerINN"/>
-    </field>
-    <field name="CustomerName" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerName"/>
-    </field>
-    <field name="CustomerAddressEmpty" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerAddressEmpty"/>
-    </field>
-    <field name="CustomerDoc" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerDoc"/>
-    </field>
-    <field name="CustomerPaymentDetails" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="CustomerPaymentDetails"/>
-    </field>
-    <field name="region" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="region"/>
-    </field>
-    <field name="city" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="city"/>
-    </field>
-    <field name="cityVillage" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="cityVillage"/>
-    </field>
-    <field name="priorityORDER" class="java.lang.Integer">
-        <property name="com.jaspersoft.studio.field.label" value="priorityORDER"/>
-    </field>
-    <field name="isAccredited" class="java.lang.Boolean">
-        <property name="com.jaspersoft.studio.field.label" value="isAccredited"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="specialities"/>
-    </field>
-    <field name="accreditationDate" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="accreditationDate"/>
-    </field>
-    <field name="PersonDoc" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PersonDoc"/>
-    </field>
-    <field name="PersonInn" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PersonInn"/>
-    </field>
-    <field name="PersonPhone" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.label" value="PersonPhone"/>
-    </field>
+    <parameter name="tenantFullName" class="java.lang.String"/>
+    <parameter name="dormitoryNumber" class="java.lang.String"/>
+    <parameter name="dormitoryStreetName" class="java.lang.String"/>
+    <parameter name="dormitoryStreetNumber" class="java.lang.String"/>
+    <parameter name="roomNumber" class="java.lang.String"/>
+    <parameter name="passportSeries" class="java.lang.String"/>
+    <parameter name="passportNumber" class="java.lang.String"/>
+    <parameter name="passportUnzdr" class="java.lang.String"/>
+    <parameter name="passportIssuer" class="java.lang.String"/>
+    <parameter name="passportIssueDate" class="java.lang.String"/>
+    <parameter name="passportValidDate" class="java.lang.String"/>
+    <parameter name="addressRegion" class="java.lang.String"/>
+    <parameter name="addressDistrict" class="java.lang.String"/>
+    <parameter name="addressSettlementType" class="java.lang.String"/>
+    <parameter name="addressCity" class="java.lang.String"/>
+    <parameter name="addressStreetType" class="java.lang.String"/>
+    <parameter name="addressStreet" class="java.lang.String"/>
+    <parameter name="addressHouse" class="java.lang.String"/>
+    <parameter name="addressApartment" class="java.lang.String"/>
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -610,7 +259,7 @@ LIMIT 1]]>
                     <paragraph firstLineIndent="0"/>
                 </textElement>
                 <text><![CDATA[П.I.Б. ______________________________________________________________________________________
-Паспорт: серія _________ № ________________            УНЗДР _______________ - ___________
+Паспорт: серія _________ № ________________            УНЗДР _____________________________
 Виданий ___________________________________________________________________________________
 Дата видачі _____________ дійсний до_____________
 Домашня адреса _____________________________________________________________________________
@@ -820,6 +469,125 @@ ________________________________________________________________________________
                 </textElement>
                 <text><![CDATA[(особистий підпис)]]></text>
             </staticText>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="400" y="70" width="190" height="10" uuid="845a06c1-8c7d-44f6-bc07-c9b0758fd993"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="602" y="100" width="23" height="10" uuid="a4b45f8d-91b4-4762-934b-726c0ab8ef6d">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{dormitoryNumber}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="510" y="110" width="120" height="10" uuid="c87cc099-7e5c-47fa-a8d3-6b44ebd631fc"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{dormitoryStreetName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="632" y="110" width="26" height="10" uuid="0074cdad-afcc-4fd3-834b-c875bc29e0f1">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{dormitoryStreetNumber}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="705" y="110" width="26" height="10" uuid="07078037-41f3-4a6a-8155-e5452cbe3a09">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{roomNumber}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="33" y="95" width="340" height="10" uuid="50decd9e-bfad-4360-a863-435c3522db14"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="62" y="104" width="36" height="10" uuid="68e87158-444a-498f-b3ea-c893adff733d">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportSeries}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="110" y="104" width="63" height="10" uuid="0676ebe0-8c4f-4547-8136-a6fc66617124">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportNumber}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="225" y="104" width="115" height="10" uuid="55257dd9-b6c6-4e8e-955d-766a8465b120">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportUnzdr}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="42" y="114" width="331" height="10" uuid="1c0fd8c6-a152-40a9-80de-68a13ca3bd16">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportIssuer}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="53" y="123" width="50" height="10" uuid="7a5ee453-6ff6-4056-b44d-4ed0fb841145">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportIssueDate}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="143" y="123" width="50" height="10" uuid="180b4aa0-39f5-4e2a-af25-50b9f063cdaf">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{passportValidDate}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="70" y="132" width="303" height="10" uuid="a05900c3-a416-4a92-93c3-caf64765473f"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{addressRegion} + $P{addressDistrict} + $P{addressSettlementType} + $P{addressCity} + $P{addressStreetType} + $P{addressStreet} + $P{addressHouse} + $P{addressApartment}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="ScaleFont">
+                <reportElement x="10" y="310" width="370" height="10" uuid="3651a188-c493-4766-8bdb-09307b701fbf"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>
+            </textField>
         </band>
         <band height="557" splitType="Prevent">
             <staticText>
