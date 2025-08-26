@@ -11,7 +11,7 @@
     <parameter name="passportUnzdr" class="java.lang.String"/>
     <parameter name="passportIssuer" class="java.lang.String"/>
     <parameter name="passportIssueDate" class="java.lang.String"/>
-    <parameter name="passportValidDate" class="java.lang.String"/>
+    <parameter name="passportExpiryDate" class="java.lang.String"/>
     <parameter name="addressRegion" class="java.lang.String"/>
     <parameter name="addressDistrict" class="java.lang.String"/>
     <parameter name="addressSettlementType" class="java.lang.String"/>
@@ -54,7 +54,7 @@
                 <text><![CDATA[1. Предмет договору]]></text>
             </staticText>
             <staticText>
-                <reportElement x="676" y="42" width="120" height="10" uuid="3a933fd4-ac8f-40be-8f4f-639d04b08fbb">
+                <reportElement x="708" y="42" width="88" height="10" uuid="3a933fd4-ac8f-40be-8f4f-639d04b08fbb">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
                 <textElement verticalAlignment="Middle">
@@ -572,22 +572,23 @@ ________________________________________________________________________________
                 <textElement textAlignment="Center">
                     <font fontName="Times New Roman" size="8"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$P{passportValidDate}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{passportExpiryDate}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="70" y="132" width="303" height="10" uuid="a05900c3-a416-4a92-93c3-caf64765473f"/>
+                <reportElement x="70" y="132" width="303" height="18" uuid="a05900c3-a416-4a92-93c3-caf64765473f"/>
                 <textElement textAlignment="Center">
                     <font fontName="Times New Roman" size="8"/>
+                    <paragraph lineSpacing="1_1_2"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$P{addressRegion} + $P{addressDistrict} + $P{addressSettlementType} + $P{addressCity} + $P{addressStreetType} + $P{addressStreet} + $P{addressHouse} + $P{addressApartment}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{addressRegion} + " область, " + $P{addressDistrict} + " район, " + $P{addressSettlementType} + " " + $P{addressCity} + ", " + $P{addressStreetType} + " " + $P{addressStreet} + ", " + $P{addressHouse} + ", " + $P{addressApartment}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="ScaleFont">
-                <reportElement x="10" y="310" width="370" height="10" uuid="3651a188-c493-4766-8bdb-09307b701fbf"/>
-                <textElement textAlignment="Center">
-                    <font fontName="Times New Roman" size="8"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>
-            </textField>
+<!--            <textField textAdjust="ScaleFont">-->
+<!--                <reportElement x="10" y="310" width="370" height="10" uuid="3651a188-c493-4766-8bdb-09307b701fbf"/>-->
+<!--                <textElement textAlignment="Center">-->
+<!--                    <font fontName="Times New Roman" size="8"/>-->
+<!--                </textElement>-->
+<!--                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>-->
+<!--            </textField>-->
         </band>
         <band height="557" splitType="Prevent">
             <staticText>
