@@ -11,8 +11,8 @@
     <parameter name="addressDistrict" class="java.lang.String"/>
     <parameter name="addressCity" class="java.lang.String"/>
     <parameter name="addressStreet" class="java.lang.String"/>
-    <parameter name="house" class="java.lang.String"/>
-    <parameter name="appartment" class="java.lang.String"/>
+    <parameter name="addressHouse" class="java.lang.String"/>
+    <parameter name="addressApartment" class="java.lang.String"/>
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -287,7 +287,7 @@
                     <font fontName="Times New Roman" size="14" isBold="true"/>
                     <paragraph leftIndent="4" rightIndent="4"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$P{house}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{addressHouse}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
                 <reportElement x="580" y="226" width="150" height="25" uuid="bc75d61a-2215-425f-8814-ce23334d9341">
@@ -298,7 +298,7 @@
                     <font fontName="Times New Roman" size="14" isBold="true"/>
                     <paragraph leftIndent="4" rightIndent="4"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$P{appartment}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{addressApartment}]]></textFieldExpression>
             </textField>
             <rectangle>
                 <reportElement x="32" y="1" width="95" height="120" uuid="fbaabd1d-42f2-49c0-a2b0-44982a94099f">
