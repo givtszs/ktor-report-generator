@@ -38,7 +38,7 @@ data class SettlementAgreementReportDto(
         "passportExpiryDate" to this.passportExpiryDate,
         "addressRegion" to this.addressRegion,
         "addressDistrict" to this.addressDistrict,
-        "addressSettlementType" to this.addressSettlementType,
+        "addressSettlementType" to this.addressSettlementType.lowercase(),
         "addressCity" to this.addressCity,
         "addressStreetType" to this.addressStreetType,
         "addressStreet" to this.addressStreet,
