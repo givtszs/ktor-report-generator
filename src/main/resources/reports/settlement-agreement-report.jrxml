@@ -3,8 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="802" pageHeight="576" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ecd887e8-2df6-43cf-bc06-8e7a49262c91">
     <parameter name="tenantFullName" class="java.lang.String"/>
     <parameter name="dormitoryNumber" class="java.lang.String"/>
-    <parameter name="dormitoryStreetName" class="java.lang.String"/>
-    <parameter name="dormitoryStreetNumber" class="java.lang.String"/>
+    <parameter name="dormitoryAddress" class="java.lang.String"/>
     <parameter name="roomNumber" class="java.lang.String"/>
     <parameter name="passportSeries" class="java.lang.String"/>
     <parameter name="passportNumber" class="java.lang.String"/>
@@ -80,7 +79,7 @@
                     <font fontName="Times New Roman" size="8" isBold="false"/>
                     <paragraph firstLineIndent="12"/>
                 </textElement>
-                <text><![CDATA[1.1. «Університет» передає, а «Мешканець» приймає в строкове платне користування частину жилого приміщення, кімнату – далі «Приміщення» гуртожитку № _____ ЗНУ, що знаходиться на балансі «Університету», за адресою: м. Запоріжжя, вул. ______________________________,______, Приміщення ______ у відповідності до вимог Житлового кодексу Української РСР, Примірного положення про користування гуртожитками, що затверджено постановою Кабінету Міністрів України № 498 від 20.06.2018 р., наказу Міністерства освіти і науки України від 21.11.2019 р. № 1452 «Про затвердження Положення про особливості користування гуртожитками закладів фахової передвищої та вищої освіти», Положення про гуртожиток Запорізького національного університету, Правил проживання в гуртожитках ЗНУ.]]></text>
+                <text><![CDATA[1.1. «Університет» передає, а «Мешканець» приймає в строкове платне користування частину жилого приміщення, кімнату – далі «Приміщення» гуртожитку № _____ ЗНУ, що знаходиться на балансі «Університету», за адресою: м. Запоріжжя, __________________________________________, Приміщення ______ у відповідності до вимог Житлового кодексу Української РСР, Примірного положення про користування гуртожитками, що затверджено постановою Кабінету Міністрів України № 498 від 20.06.2018 р., наказу Міністерства освіти і науки України від 21.11.2019 р. № 1452 «Про затвердження Положення про особливості користування гуртожитками закладів фахової передвищої та вищої освіти», Положення про гуртожиток Запорізького національного університету, Правил проживання в гуртожитках ЗНУ.]]></text>
             </staticText>
             <staticText>
                 <reportElement x="400" y="167" width="396" height="10" uuid="16e837fa-eb28-478b-8bfc-f493830ee3f5">
@@ -487,24 +486,16 @@ ________________________________________________________________________________
                 <textFieldExpression><![CDATA[$P{dormitoryNumber}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="510" y="110" width="120" height="10" uuid="c87cc099-7e5c-47fa-a8d3-6b44ebd631fc"/>
-                <textElement textAlignment="Center">
-                    <font fontName="Times New Roman" size="8"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$P{dormitoryStreetName}]]></textFieldExpression>
-            </textField>
-            <textField textAdjust="ScaleFont">
-                <reportElement x="632" y="110" width="26" height="10" uuid="0074cdad-afcc-4fd3-834b-c875bc29e0f1">
+                <reportElement x="495" y="110" width="170" height="10" uuid="c87cc099-7e5c-47fa-a8d3-6b44ebd631fc">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
-                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
                 </reportElement>
                 <textElement textAlignment="Center">
                     <font fontName="Times New Roman" size="8"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$P{dormitoryStreetNumber}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{dormitoryAddress}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="705" y="110" width="26" height="10" uuid="07078037-41f3-4a6a-8155-e5452cbe3a09">
+                <reportElement x="715" y="110" width="26" height="10" uuid="07078037-41f3-4a6a-8155-e5452cbe3a09">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                 </reportElement>
@@ -582,13 +573,6 @@ ________________________________________________________________________________
                 </textElement>
                 <textFieldExpression><![CDATA[$P{addressRegion} + " область, " + $P{addressDistrict} + " район, " + $P{addressSettlementType} + " " + $P{addressCity} + ", " + $P{addressStreetType} + " " + $P{addressStreet} + ", " + $P{addressHouse} + ", " + $P{addressApartment}]]></textFieldExpression>
             </textField>
-<!--            <textField textAdjust="ScaleFont">-->
-<!--                <reportElement x="10" y="310" width="370" height="10" uuid="3651a188-c493-4766-8bdb-09307b701fbf"/>-->
-<!--                <textElement textAlignment="Center">-->
-<!--                    <font fontName="Times New Roman" size="8"/>-->
-<!--                </textElement>-->
-<!--                <textFieldExpression><![CDATA[$P{tenantFullName}]]></textFieldExpression>-->
-<!--            </textField>-->
         </band>
         <band height="557" splitType="Prevent">
             <staticText>
