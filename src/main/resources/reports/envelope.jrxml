@@ -13,6 +13,7 @@
     <parameter name="addressStreet" class="java.lang.String"/>
     <parameter name="addressHouse" class="java.lang.String"/>
     <parameter name="addressApartment" class="java.lang.String"/>
+    <parameter name="profilePictureUrl" class="java.lang.String"/>
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -300,12 +301,10 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$P{addressApartment}]]></textFieldExpression>
             </textField>
-            <rectangle>
-                <reportElement x="32" y="1" width="95" height="120" uuid="fbaabd1d-42f2-49c0-a2b0-44982a94099f">
-                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
-                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
-                </reportElement>
-            </rectangle>
+            <image>
+                <reportElement x="32" y="0" width="95" height="121" uuid="e6001382-2bb9-4a6d-8e80-2526f6da559d"/>
+                <imageExpression><![CDATA[$P{profilePictureUrl}]]></imageExpression>
+            </image>
         </band>
     </detail>
 </jasperReport>
