@@ -8,6 +8,7 @@ data class TemporaryPassDto(
     val faculty: String,
     val dormitoryNumber: String,
     val roomNumber: String,
+    val profilePictureUrl: String,
 ) {
     fun toMap() = mapOf(
         "firstName" to firstName,
@@ -17,5 +18,6 @@ data class TemporaryPassDto(
         "faculty" to faculty,
         "dormitoryNumber" to dormitoryNumber,
         "roomNumber" to roomNumber,
+        "profilePictureUrl" to profilePictureUrl,
     )
 }

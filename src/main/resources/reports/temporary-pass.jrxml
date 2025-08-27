@@ -8,18 +8,13 @@
     <parameter name="faculty" class="java.lang.String"/>
     <parameter name="dormitoryNumber" class="java.lang.String"/>
     <parameter name="roomNumber" class="java.lang.String"/>
+    <parameter name="profilePictureUrl" class="java.lang.String"/>
     <background>
         <band splitType="Stretch"/>
     </background>
     <detail>
         <band height="300" splitType="Stretch">
             <property name="com.jaspersoft.studio.unit.height" value="px"/>
-            <rectangle>
-                <reportElement x="0" y="30" width="95" height="120" uuid="ab0b381a-9a4b-477b-926f-ae78564e3322">
-                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
-                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
-                </reportElement>
-            </rectangle>
             <staticText>
                 <reportElement x="0" y="0" width="150" height="20" uuid="467be41a-015b-49b7-8788-03b6dc257f34"/>
                 <textElement>
@@ -131,6 +126,12 @@
                 </textElement>
                 <text><![CDATA[Кімната:]]></text>
             </staticText>
+            <image scaleImage="RetainShape" hAlign="Center" vAlign="Top">
+                <reportElement x="0" y="30" width="95" height="120" uuid="82523d4a-3f87-4b43-8ebb-92d663e02118">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                </reportElement>
+                <imageExpression><![CDATA[$P{profilePictureUrl}]]></imageExpression>
+            </image>
         </band>
     </detail>
 </jasperReport>
