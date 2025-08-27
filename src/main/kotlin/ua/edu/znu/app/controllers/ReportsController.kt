@@ -5,6 +5,7 @@ import kotlinx.coroutines.withContext
 import ua.edu.znu.app.request_payloads.EnvelopePayload
 import ua.edu.znu.app.request_payloads.SettlementAgreementReportPayload
 import ua.edu.znu.app.request_payloads.SettlementReportPayload
+import ua.edu.znu.app.request_payloads.TemporaryPassPayload
 import ua.edu.znu.app.services.ReportsGeneratorService
 
 class ReportsController(private val reportsGeneratorService: ReportsGeneratorService) {
@@ -23,6 +24,12 @@ class ReportsController(private val reportsGeneratorService: ReportsGeneratorSer
     suspend fun getEnvelope(requestPayload: EnvelopePayload): ByteArray {
         return withContext(Dispatchers.IO) {
             reportsGeneratorService.generateEnvelope(requestPayload.data.metadata)
+        }
+    }
+
+    suspend fun getTemporaryPass(requestPayload: TemporaryPassPayload): ByteArray {
+        return withContext(Dispatchers.IO) {
+            reportsGeneratorService.generateTemporaryPass(requestPayload.data.metadata)
         }
     }
 }

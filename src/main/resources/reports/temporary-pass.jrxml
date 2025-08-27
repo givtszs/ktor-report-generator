@@ -28,7 +28,7 @@
                 <text><![CDATA[Тимчасова перепустка]]></text>
             </staticText>
             <textField textAdjust="ScaleFont">
-                <reportElement x="105" y="30" width="250" height="20" uuid="fb86f362-3341-4eb3-aa9a-73bc043e2d77">
+                <reportElement x="115" y="30" width="250" height="20" uuid="fb86f362-3341-4eb3-aa9a-73bc043e2d77">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -41,7 +41,7 @@
                 <textFieldExpression><![CDATA[$P{secondName}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="105" y="50" width="250" height="20" uuid="67b9c896-6624-4b34-95a5-f8df7defe3cd">
+                <reportElement x="115" y="50" width="250" height="20" uuid="67b9c896-6624-4b34-95a5-f8df7defe3cd">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -53,7 +53,7 @@
                 <textFieldExpression><![CDATA[$P{firstName}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="105" y="70" width="250" height="20" uuid="9a8ee581-5b6c-4f91-8478-8574072ec0da">
+                <reportElement x="115" y="70" width="250" height="20" uuid="9a8ee581-5b6c-4f91-8478-8574072ec0da">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -65,7 +65,7 @@
                 <textFieldExpression><![CDATA[$P{lastName}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="105" y="125" width="250" height="20" uuid="fd0bd5a0-f418-4846-8859-72b8c0862afc">
+                <reportElement x="115" y="120" width="250" height="20" uuid="fd0bd5a0-f418-4846-8859-72b8c0862afc">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -77,7 +77,7 @@
                 <textFieldExpression><![CDATA["Курс: " + $P{course}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="105" y="95" width="250" height="20" uuid="e31adf8f-0c85-42bf-8d09-2b53c91c2a5a">
+                <reportElement x="115" y="100" width="250" height="20" uuid="e31adf8f-0c85-42bf-8d09-2b53c91c2a5a">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -89,8 +89,9 @@
                 <textFieldExpression><![CDATA[$P{faculty}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="105" y="160" width="84" height="20" uuid="15bb7c61-1d6c-4801-9f3c-f0c86c22fc77">
+                <reportElement x="119" y="150" width="78" height="20" uuid="15bb7c61-1d6c-4801-9f3c-f0c86c22fc77">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
                 <textElement>
                     <font fontName="Times New Roman" size="14"/>
@@ -98,7 +99,7 @@
                 <text><![CDATA[Гуртожиток:]]></text>
             </staticText>
             <textField textAdjust="ScaleFont">
-                <reportElement x="189" y="160" width="166" height="20" uuid="7b8ee575-60ab-4f4e-a6ea-b59ec2927841">
+                <reportElement x="197" y="150" width="166" height="20" uuid="7b8ee575-60ab-4f4e-a6ea-b59ec2927841">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -110,7 +111,7 @@
                 <textFieldExpression><![CDATA[$P{dormitoryNumber}]]></textFieldExpression>
             </textField>
             <textField textAdjust="ScaleFont">
-                <reportElement x="189" y="195" width="166" height="20" uuid="e1f23836-c146-4d2d-8609-3a00317b48cf">
+                <reportElement x="172" y="170" width="191" height="20" uuid="e1f23836-c146-4d2d-8609-3a00317b48cf">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -122,7 +123,7 @@
                 <textFieldExpression><![CDATA[$P{roomNumber}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="105" y="195" width="84" height="20" uuid="872ce2ce-b11e-448c-a339-4a886fe9f982">
+                <reportElement x="119" y="170" width="53" height="20" uuid="872ce2ce-b11e-448c-a339-4a886fe9f982">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
                 <textElement>

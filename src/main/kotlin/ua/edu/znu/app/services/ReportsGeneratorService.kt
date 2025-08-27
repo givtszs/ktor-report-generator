@@ -6,11 +6,13 @@ import net.sf.jasperreports.engine.JasperReport
 import ua.edu.znu.app.dto.EnvelopeDto
 import ua.edu.znu.app.dto.SettlementAgreementReportDto
 import ua.edu.znu.app.dto.SettlementReportDto
+import ua.edu.znu.app.dto.TemporaryPassDto
 
 class ReportsGeneratorService(private val jasperReportsService: JasperReportsService) {
     private val settlementReport: JasperReport by lazy { jasperReportsService.compileReport("/reports/settlement-report.jrxml") }
     private val settlementAgreementReport: JasperReport by lazy { jasperReportsService.compileReport("/reports/settlement-agreement-report.jrxml") }
     private val envelope: JasperReport by lazy { jasperReportsService.compileReport("/reports/envelope.jrxml") }
+    private val temporaryPass: JasperReport by lazy { jasperReportsService.compileReport("/reports/temporary-pass.jrxml") }
 
     fun generateSettlementReport(
         settlementReportDto: SettlementReportDto,
@@ -56,6 +58,24 @@ class ReportsGeneratorService(private val jasperReportsService: JasperReportsSer
 
             val jasperPrint = JasperFillManager.fillReport(
                 envelope,
+                parameters,
+                JREmptyDataSource(1)
+            )
+
+            jasperReportsService.exportToPdf(jasperPrint)
+        } catch (e: Exception) {
+            throw RuntimeException("Error generating report", e)
+        }
+    }
+
+    fun generateTemporaryPass(
+        temporaryPassDto: TemporaryPassDto,
+    ): ByteArray {
+        return try {
+            val parameters = temporaryPassDto.toMap()
+
+            val jasperPrint = JasperFillManager.fillReport(
+                temporaryPass,
                 parameters,
                 JREmptyDataSource(1)
             )
