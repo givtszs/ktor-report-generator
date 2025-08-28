@@ -2,6 +2,7 @@ package ua.edu.znu.app.controllers
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import ua.edu.znu.app.request_payloads.EnvelopeAndTemporaryPassPayload
 import ua.edu.znu.app.request_payloads.EnvelopePayload
 import ua.edu.znu.app.request_payloads.SettlementAgreementReportPayload
 import ua.edu.znu.app.request_payloads.SettlementReportPayload
@@ -30,6 +31,12 @@ class ReportsController(private val reportsGeneratorService: ReportsGeneratorSer
     suspend fun getTemporaryPass(requestPayload: TemporaryPassPayload): ByteArray {
         return withContext(Dispatchers.IO) {
             reportsGeneratorService.generateTemporaryPass(requestPayload.data.metadata)
+        }
+    }
+
+    suspend fun getEnvelopeAndTemporaryPass(requestPayload: EnvelopeAndTemporaryPassPayload): ByteArray {
+        return withContext(Dispatchers.IO) {
+            reportsGeneratorService.generateEnvelopeAndTemporaryPass(requestPayload.data.metadata)
         }
     }
 }

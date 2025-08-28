@@ -9,6 +9,7 @@ import org.koin.ktor.ext.inject
 import ua.edu.znu.app.controllers.ReportsController
 import ua.edu.znu.app.dto.CreateLogDto
 import ua.edu.znu.app.repositories.LogRepository
+import ua.edu.znu.app.request_payloads.EnvelopeAndTemporaryPassPayload
 import ua.edu.znu.app.request_payloads.EnvelopePayload
 import ua.edu.znu.app.request_payloads.SettlementAgreementReportPayload
 import ua.edu.znu.app.request_payloads.SettlementReportPayload
@@ -182,6 +183,49 @@ fun Application.configureReportsRoutes() {
                     LogRepository.createLog(
                         CreateLogDto(
                             endpoint = "reports/temporary-pass",
+                            method = "POST",
+                            log = call.receive<String>(),
+                            status = 500
+                        )
+                    )
+
+                    call.respondText(
+                        text = "Error 500: ${exception.message}",
+                        status = HttpStatusCode.InternalServerError
+                    )
+                }
+            }
+
+            post("/envelope-and-temporary-pass") {
+                try {
+                    val payload = call.receive<EnvelopeAndTemporaryPassPayload>()
+                    val data = payload.data.metadata
+                    val reportBytes = reportsController.getEnvelopeAndTemporaryPass(payload)
+
+                    call.response.header(
+                        HttpHeaders.ContentDisposition,
+                        // file name will primarily come from the backend
+                        "attachment; filename=\"Конверт та тимчасова перепустка - ${data.secondName} ${data.firstName} ${data.lastName}.pdf\""
+                    )
+
+                    LogRepository.createLog(
+                        CreateLogDto(
+                            endpoint = "reports/envelope-and-temporary-pass",
+                            method = "POST",
+                            log = payload.toString(),
+                            status = 200
+                        )
+                    )
+
+                    call.respondBytes(
+                        reportBytes,
+                        contentType = ContentType.Application.Pdf,
+                        status = HttpStatusCode.OK
+                    )
+                } catch (exception: Exception) {
+                    LogRepository.createLog(
+                        CreateLogDto(
+                            endpoint = "reports/envelope-and-temporary-pass",
                             method = "POST",
                             log = call.receive<String>(),
                             status = 500

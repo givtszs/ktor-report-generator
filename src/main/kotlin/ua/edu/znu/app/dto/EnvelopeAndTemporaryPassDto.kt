@@ -1,0 +1,41 @@
+package ua.edu.znu.app.dto
+
+data class EnvelopeAndTemporaryPassDto(
+    val firstName: String,
+    val secondName: String,
+    val lastName: String,
+    val course: String,
+    val faculty: String,
+    val phoneNumber: String,
+    val addressRegion: String,
+    val addressDistrict: String,
+    val addressCity: String,
+    val addressStreetType: String,
+    val addressStreet: String,
+    val addressHouse: String,
+    val addressApartment: String,
+    val dormitoryNumber: String,
+    val roomNumber: String,
+    val profilePictureUrl: String?,
+    val logoUrl: String,
+) {
+    fun toMap() = mapOf(
+        "firstName" to firstName,
+        "secondName" to secondName,
+        "lastName" to lastName,
+        "course" to course,
+        "faculty" to faculty,
+        "phoneNumber" to phoneNumber,
+        "addressRegion" to addressRegion,
+        "addressDistrict" to addressDistrict,
+        "addressCity" to addressCity,
+        "addressStreetType" to addressStreetType,
+        "addressStreet" to addressStreet,
+        "addressHouse" to addressHouse,
+        "addressApartment" to addressApartment,
+        "dormitoryNumber" to dormitoryNumber,
+        "roomNumber" to roomNumber,
+        "profilePictureUrl" to profilePictureUrl,
+        "logoUrl" to logoUrl,
+    )
+}
