@@ -10,10 +10,11 @@ data class EnvelopeDto(
     val addressRegion: String,
     val addressDistrict: String,
     val addressCity: String,
+    val addressStreetType: String,
     val addressStreet: String,
     val addressHouse: String,
     val addressApartment: String,
-    val profilePictureUrl: String,
+    val profilePictureUrl: String?,
 ) {
     fun toMap() = mapOf(
         "firstName" to firstName,
@@ -25,6 +26,7 @@ data class EnvelopeDto(
         "addressRegion" to addressRegion,
         "addressDistrict" to addressDistrict,
         "addressCity" to addressCity,
+        "addressStreetType" to addressStreetType,
         "addressStreet" to addressStreet,
         "addressHouse" to addressHouse,
         "addressApartment" to addressApartment,
