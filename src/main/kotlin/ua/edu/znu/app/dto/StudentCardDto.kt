@@ -1,0 +1,41 @@
+package ua.edu.znu.app.dto
+
+data class StudentCardDto(
+    val firstName: String,
+    val secondName: String,
+    val lastName: String,
+    val faculty: String,
+    val studentPhoneNumber: String,
+    val addressRegion: String,
+    val addressDistrict: String,
+    val addressCity: String,
+    val addressStreetType: String,
+    val addressStreet: String,
+    val addressHouse: String,
+    val addressApartment: String,
+    val profilePictureUrl: String?,
+    val passportSeries: String?,
+    val passportNumber: String?,
+    val passportIssuer: String,
+    val familyMembers: List<FamilyMemberDto>,
+) {
+    fun toMap() = mapOf(
+        "firstName" to firstName,
+        "secondName" to secondName,
+        "lastName" to lastName,
+        "faculty" to faculty,
+        "studentPhoneNumber" to studentPhoneNumber,
+        "profilePictureUrl" to profilePictureUrl,
+        "addressRegion" to addressRegion,
+        "addressDistrict" to addressDistrict,
+        "addressCity" to addressCity,
+        "addressStreetType" to addressStreetType,
+        "addressStreet" to addressStreet,
+        "addressHouse" to addressHouse,
+        "addressApartment" to addressApartment,
+        "passportSeries" to passportSeries,
+        "passportNumber" to passportNumber,
+        "passportIssuer" to passportIssuer,
+        "familyMembers" to familyMembers,
+    )
+}

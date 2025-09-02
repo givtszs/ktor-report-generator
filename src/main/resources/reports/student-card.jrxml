@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student-card" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b059096-c282-49f2-b153-63d7349bf501">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="faculty" class="java.lang.String"/>
+	<parameter name="firstName" class="java.lang.String"/>
+	<parameter name="secondName" class="java.lang.String"/>
+	<parameter name="lastName" class="java.lang.String"/>
+	<parameter name="birthDate" class="java.lang.String"/>
+	<parameter name="birthPlace" class="java.lang.String"/>
+	<parameter name="studentPhoneNumber" class="java.lang.String"/>
+	<parameter name="addressRegion" class="java.lang.String"/>
+	<parameter name="addressDistrict" class="java.lang.String"/>
+	<parameter name="addressCity" class="java.lang.String"/>
+	<parameter name="addressStreetType" class="java.lang.String"/>
+	<parameter name="addressStreet" class="java.lang.String"/>
+	<parameter name="addressHouse" class="java.lang.String"/>
+	<parameter name="addressApartment" class="java.lang.String"/>
+	<parameter name="passportSeries" class="java.lang.String"/>
+	<parameter name="passportNumber" class="java.lang.String"/>
+	<parameter name="passportIssuer" class="java.lang.String"/>
+	<parameter name="profilePictureUrl" class="java.lang.String"/>
+	<parameter name="familyMembers" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement x="0" y="105" width="100" height="20" uuid="eb35df17-89fd-4b7c-91f6-7135a46b6b33">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="125" width="100" height="20" uuid="6c763e74-2992-4b16-86c4-278193e733a7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="145" width="100" height="20" uuid="808b6687-2f0e-4f8b-9a1e-5da90be7a275">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="165" width="100" height="20" uuid="eca752f0-93a1-4a8e-b1b1-74417436d53f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="105" width="455" height="20" uuid="89ac6f22-6dd2-4abd-bd60-c79e68277200">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="125" width="50" height="20" uuid="c4dbd96b-7f48-432c-8962-a4ac969962a7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="125" width="50" height="20" uuid="1c8c4ac0-6d92-48bd-b399-65532d38a848">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="125" width="50" height="20" uuid="4aa9c261-e6f3-484f-92ed-9defe00d9d26">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="250" y="125" width="50" height="20" uuid="f787226f-db87-43cd-8fc9-fd37b013f834">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="125" width="50" height="20" uuid="6192b29c-1509-4c8c-8473-16febc07f34a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="125" width="50" height="20" uuid="df3d8846-e203-4874-8169-9d87f31ebe32">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="400" y="125" width="50" height="20" uuid="c4138cf3-ec4d-4270-b26b-c5e4afd55285">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="125" width="50" height="20" uuid="6a3cbad7-f645-4ce0-aca7-6ea24c8497f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="500" y="125" width="55" height="20" uuid="4eb3b3f3-30e3-4f06-b29d-84f464024cee">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="145" width="50" height="20" uuid="f80a2724-552b-4481-bb45-2a553a276014">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="500" y="145" width="55" height="20" uuid="d90b7b97-4727-4b5b-9156-0235539a90cd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="250" y="145" width="50" height="20" uuid="a5390f76-a6c0-4aab-a0d7-be864c5aaf56">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="145" width="50" height="20" uuid="0a697c96-2458-451a-a437-b69ac1fa1d09">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="145" width="50" height="20" uuid="b1cde595-b869-4101-8a5a-ac2baf892f69">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="145" width="50" height="20" uuid="da5be5b2-3f1a-4ba9-9781-39438f4fad50">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="145" width="50" height="20" uuid="3eb1f350-4013-4f1d-bfe9-18668bf1e09f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="145" width="50" height="20" uuid="1189ae5d-893e-4439-bbc6-77cba7111dec">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="400" y="145" width="50" height="20" uuid="fccc0a67-0c62-4c3b-b41b-c6986a329fbb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="165" width="50" height="20" uuid="dc2ed541-2482-46fa-89c7-fd46a0cddb51">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="500" y="165" width="55" height="20" uuid="9d294dc0-12b5-4802-af4b-c8acbee3360d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="250" y="165" width="50" height="20" uuid="fc99416c-9608-40a1-ae44-5fb125f00ff5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="165" width="50" height="20" uuid="bbe68ecd-3eb5-477e-a8d0-e74ae6b51143">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="165" width="50" height="20" uuid="4bcc7e66-4b05-4a65-b2a4-02866c62d92a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="165" width="50" height="20" uuid="3d19e757-5193-4497-9c17-c5d570921bd6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="165" width="50" height="20" uuid="41e25125-eabe-4207-abc8-ff3b6323f869">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="165" width="50" height="20" uuid="2fd3febc-22c8-4ddb-b576-8e77425fab1c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="400" y="165" width="50" height="20" uuid="a969f47e-fd38-40a6-9734-9007fdaebbc1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="195" width="150" height="20" uuid="bd9001b6-5892-4751-9adf-c9eb5a893331">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="195" width="150" height="20" uuid="93c375f7-fbf5-49b1-8af9-7887728f1714">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="215" width="405" height="20" uuid="e0aeb7db-e91f-4ecb-9bd3-e5fd4ada28c0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="215" width="150" height="20" uuid="38eb63e5-23b2-4cdd-ab0f-49c42ec07a90">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="235" width="405" height="20" uuid="2adaefa1-6e0d-4ed4-9263-7a1b1c27bfbc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="235" width="150" height="20" uuid="19c39f6b-5a0c-47c7-91ed-5af97e2ae062">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="255" width="405" height="20" uuid="e9b183ff-2c76-4ddc-a092-fbfc0c69a9e9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="255" width="150" height="20" uuid="5735e1a5-69cf-46ad-a4ad-caa6fd69a1bf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="275" width="405" height="20" uuid="22756b21-0ad3-419c-9452-95db9e6892ac">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="275" width="150" height="20" uuid="df7904db-6e45-4340-835c-5031bbf8fac4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="295" width="150" height="20" uuid="5d04aa12-739f-42fa-99b5-1dcbc01d1b22">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="355" width="150" height="20" uuid="0b66e720-0933-4f47-a4e6-1807acf827b3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="315" width="150" height="20" uuid="915a0b45-c750-4b73-9ecb-506cd397f0cd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="335" width="150" height="20" uuid="5c3e7ad7-6564-4d7a-9a1f-f11edfb31b53">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="295" width="405" height="20" uuid="cbcbc5e9-1965-4cf2-88b6-ea429a6b1855">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="315" width="405" height="20" uuid="aea5f105-b347-472b-b62e-88f5cd5e3072">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="335" width="405" height="20" uuid="955ff877-ac14-45d0-a2eb-966b4ccec1b5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="355" width="405" height="20" uuid="8145a06c-ed2c-495d-98ba-7c913fca8844">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="415" width="150" height="20" uuid="236b7971-886c-4d87-8d89-ece76fa3d262">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="395" width="150" height="20" uuid="ac92dcd9-fe3d-4598-b5e2-dad8547c06c2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="375" width="150" height="20" uuid="08fd147d-e33b-4aeb-b2ee-02d11c9d3391">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="395" width="405" height="20" uuid="d775fe97-f89a-4afe-9210-5d9141f51bf5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="375" width="405" height="20" uuid="f6742756-8287-4ad8-8e64-edbe98082cf8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="415" width="405" height="20" uuid="e28b9092-25c1-4b8f-9578-d74486b021aa">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="435" width="405" height="20" uuid="3649ab93-d91b-4501-b2e9-23ae223d8031">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="435" width="150" height="20" uuid="07f57540-9e63-49ca-878a-8abcc97c628a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="465" width="555" height="20" uuid="d1f1855e-d612-4a70-a551-c87aad5b0b55">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="485" width="150" height="20" uuid="c7e15fde-29a8-4aeb-9c11-1b2a04370512">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="485" width="405" height="20" uuid="375a234f-776f-4a3f-89af-84e5d90b793a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="602" width="280" height="20" uuid="7f902fbf-8070-49be-84ad-88e4e6daaf04">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="602" width="275" height="20" uuid="fd437451-ed26-40d8-b82d-6ca36de331f2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="622" width="60" height="20" uuid="46a7eac6-5106-485e-89ac-44893eba19cb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="642" width="60" height="20" uuid="f6dd7d08-e550-4c55-9e95-9703cfd2280a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="662" width="60" height="20" uuid="f6adfced-2571-4554-b03a-47ca42e87fb4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="682" width="60" height="20" uuid="963d4553-5b6a-4441-8e1a-676e7ad4a91d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="702" width="60" height="20" uuid="21cfb355-38e1-4756-ae0b-6b7553a5c755">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="722" width="60" height="20" uuid="07ca954b-19b3-4921-aa17-8fdeba99d572">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="742" width="60" height="20" uuid="44b9972e-99aa-4ca4-8135-46e0830399a8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="762" width="60" height="20" uuid="d48876f9-f9ca-4071-8330-172bbd9142c1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="782" width="60" height="20" uuid="1e3922a9-d952-4671-8e7c-34d10e93a45d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="622" width="110" height="20" uuid="46a0c5f3-ac15-45c8-b8a7-bd1e18124644">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="622" width="110" height="20" uuid="5bdc55dc-510d-4052-9331-ca908dcdb5f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="642" width="110" height="20" uuid="64ccea0f-ab7d-4b46-b9a1-7188a7d7795b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="642" width="110" height="20" uuid="2ca18ff3-9dbb-4075-a1eb-60c245271711">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="682" width="110" height="20" uuid="0ccc981b-bb19-4943-806e-be87c1d0011d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="662" width="110" height="20" uuid="152a92b5-2edb-487f-a7cb-e83e8e6e546e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="662" width="110" height="20" uuid="ec143012-d8b2-4099-877c-fde4c590e547"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="682" width="110" height="20" uuid="3addc823-660c-4b38-8941-ab8d0f387cb3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="722" width="110" height="20" uuid="06bc9a06-1c1f-49d0-a7a4-471efb0f7439"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="702" width="110" height="20" uuid="2721c4e2-b74d-41da-bd5d-12bea142987d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="702" width="110" height="20" uuid="7b79f201-d4bf-4bd5-bb5d-10d5b649d343"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="722" width="110" height="20" uuid="38812174-757c-419d-b0a4-387f9551bafc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="762" width="110" height="20" uuid="20825071-cee0-43d5-bf98-767d9ac1ce48"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="742" width="110" height="20" uuid="f89f4a5a-e2d1-4ad0-9a40-93d4eee8245e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="742" width="110" height="20" uuid="085a8d66-1904-4f0d-9b4b-d7bd695323df"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="762" width="110" height="20" uuid="cade09a8-0839-4476-9c23-a74f337e6df6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="782" width="110" height="20" uuid="18cda4a1-37d9-4e0d-a69e-c440089748e0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="60" y="782" width="110" height="20" uuid="9130bacc-61d8-47c3-81b2-e6b135ac797a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="622" width="275" height="20" uuid="1ab98b75-c8b5-4f0d-b327-aede03c14894">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="642" width="275" height="20" uuid="f20f1e44-6fd0-414c-adf7-698ad5a02281">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="662" width="275" height="20" uuid="1a34f2a6-fb9a-4208-b5ce-ef7e8c2f945b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="682" width="275" height="20" uuid="8a45339e-7d8c-49d9-8c02-985d6b63d921">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="702" width="275" height="20" uuid="9abfad59-0b97-4db0-8cd0-aa848b2f987a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="722" width="275" height="20" uuid="b096f1ca-7430-444c-8981-653bf79c57d6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="742" width="275" height="20" uuid="c6965aeb-88f2-491b-aa1a-87cedbf51ae8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="762" width="275" height="20" uuid="ca623d6a-021d-4413-8c48-d047b70aafb9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="280" y="782" width="275" height="20" uuid="c420da96-0b68-4550-9aca-fe0c4e53f580">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="105" width="100" height="20" uuid="928a6a92-cdf8-485f-9f1b-af2887dab558">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Факультет:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="100" height="20" uuid="3700456c-1170-483f-a958-4409ba4c3618">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="100" height="20" uuid="09d5ee86-efd4-4078-b4b0-9c3392a2f284">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Гуртожиток:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="165" width="100" height="20" uuid="62d659bb-21d3-4744-a4c0-08a561be728f">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Кімната:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="125" width="50" height="20" uuid="f6192224-71c6-4278-a4cd-2a794fb14658">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="125" width="50" height="20" uuid="84a3f420-f39a-4b8c-91a6-9e01e4371547">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="125" width="50" height="20" uuid="ecc88eb6-ecce-4fcf-b59c-9d4ff86ea746">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="125" width="50" height="20" uuid="6a2bde32-1fd5-484e-891a-6ea5d7d5be5e">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="125" width="50" height="20" uuid="1548c5b4-52df-4e8d-a2aa-925702d769af">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1м]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="125" width="50" height="20" uuid="5a61b27c-bde4-4f06-98c3-b9b34bbb08d0">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2м]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="125" width="50" height="20" uuid="28599c80-1fb6-494d-8b2d-eed381ec3526">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1 Інт]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="125" width="50" height="20" uuid="f8e6c602-d9f0-445e-9de7-bfd75b2772c7">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2 Інт]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="125" width="55" height="20" uuid="8256dfab-4226-4fac-9afe-b1ff02388034">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[3 Інт]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="195" width="150" height="20" uuid="1c0cffb5-f15a-4143-96a1-7aabd9ebc10d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Договір №:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="215" width="150" height="20" uuid="0136a959-cb0c-4eed-9940-b9c1847a84b9">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[ПІБ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="235" width="150" height="20" uuid="2f0ece65-eaa7-4496-b851-50eb80aa723d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Дата народження:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="255" width="150" height="20" uuid="77f8fdb1-564e-4331-a97b-ae85b0636ccf">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Місце народження:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="275" width="150" height="20" uuid="6e199851-36f9-45f4-a27f-e969b95930f4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Серія/номер паспорту:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="295" width="150" height="20" uuid="28a1dd7f-381e-4507-950e-5b48bfd5ca60">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Ким виданий паспорт:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="335" width="150" height="20" uuid="bc8045fd-877d-4635-a86d-abd567f33728">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Область:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="355" width="150" height="20" uuid="c70c3560-0e55-492e-b9f3-0a4d999ea89c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Район:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="375" width="150" height="20" uuid="ffbb360e-b964-4c78-bb3e-62bd81379bff">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Місто/село:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="395" width="150" height="20" uuid="8cb674d1-7369-46e4-a5a3-e05699c22d61">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Вулиця:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="415" width="150" height="20" uuid="1441a9f1-ec1b-415c-933a-a2f6f5fe1f7b">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Будинок:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="435" width="150" height="20" uuid="948cb9df-ff27-4458-954e-554cf2112de9">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Квартира:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="315" width="150" height="20" uuid="1da11274-051a-45d2-9576-599b110ff19e">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Телефон студента:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="465" width="554" height="20" uuid="c47477cf-3025-47b7-aef6-1a96233b4638">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Члени родини]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="602" width="280" height="20" uuid="9b8d13d2-c214-4870-bcf8-690ef27cf2f4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Рекомендований/на:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="602" width="274" height="20" uuid="491cd813-338d-4a85-9498-1d0f718235b3">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Зафіксовані порушення:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="622" width="60" height="20" uuid="712ece90-3d8e-4117-8f74-5c8c8894cd52">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1 курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="642" width="60" height="20" uuid="52ba251e-8692-4436-9172-a2005d62de27">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2 курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="662" width="60" height="20" uuid="9a78df5b-8def-46ec-ac48-413c8c3e23c5">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[3 курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="682" width="60" height="20" uuid="89a05ee0-b6a6-4703-8a6f-b0b0da0be693">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[4 курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="702" width="60" height="20" uuid="40aa45d3-c205-4fe9-b284-154fc0cddad3">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1м курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="722" width="60" height="20" uuid="280eb879-e6a6-486a-a7a8-76f4024cbd75">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2м курс:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="742" width="60" height="20" uuid="7c56c760-c931-4242-9889-a1b634f0dfa9">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[1 Інт:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="762" width="60" height="20" uuid="ac629287-4037-469d-8959-6f0a53b225e4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[2 Інт:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="782" width="60" height="20" uuid="0356b0ff-e403-47b2-acfd-361741f1069b">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[3 Інт:]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="151" y="215" width="405" height="20" uuid="1a34457b-0c40-4d8b-aeb6-c2e5831cf8e2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{secondName} + " " + $P{firstName} + " " + $P{lastName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="235" width="405" height="20" uuid="77fd9d3b-52a0-47f9-a401-4c9bd3814360">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthDate}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="255" width="405" height="20" uuid="0fc3b496-f70b-40d9-bde3-2e0667d6ea5f">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthPlace}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="275" width="405" height="20" uuid="bbe4d997-fe4e-457f-959b-f6b221a4cdfb">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($P{passportSeries} != null,$P{passportSeries},$P{passportNumber})]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="295" width="405" height="20" uuid="ac920e8b-51ea-40dd-9f4e-6f0ca578636c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passportIssuer}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="315" width="405" height="20" uuid="324ec0ba-cf4c-4a87-927b-5e43a5ba27f4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentPhoneNumber}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="335" width="405" height="20" uuid="16f58b35-a888-41a5-86bf-645dab697150">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressRegion}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="355" width="405" height="20" uuid="56bca5cf-94bd-4863-adb7-40a4d5b03091">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressDistrict}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="375" width="405" height="20" uuid="bc76e808-70e1-465e-9a4b-3dac506f408c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressCity}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="395" width="405" height="20" uuid="22c3e911-d8eb-4969-a35e-ed806eb0513d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressStreetType} + " " + $P{addressStreet}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="415" width="405" height="20" uuid="690c3c49-2905-4338-824d-a1ea8ae6732d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressHouse}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="150" y="435" width="405" height="20" uuid="30f33d5f-e93f-426c-b6ef-92d7990f66e7">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{addressApartment}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="100" y="105" width="455" height="20" uuid="b700f366-81dd-45ad-ba9a-8abe479d068b">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph leftIndent="4" rightIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{faculty}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="80" height="105" uuid="34d506a3-e7ef-4e6e-a48f-1c120f26db44"/>
+				<imageExpression><![CDATA[$P{profilePictureUrl}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

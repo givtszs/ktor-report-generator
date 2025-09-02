@@ -7,6 +7,7 @@ import ua.edu.znu.app.dto.EnvelopeAndTemporaryPassDto
 import ua.edu.znu.app.dto.EnvelopeDto
 import ua.edu.znu.app.dto.SettlementAgreementReportDto
 import ua.edu.znu.app.dto.SettlementReportDto
+import ua.edu.znu.app.dto.StudentCardDto
 import ua.edu.znu.app.dto.TemporaryPassDto
 
 class ReportsGeneratorService(private val jasperReportsService: JasperReportsService) {
@@ -15,6 +16,7 @@ class ReportsGeneratorService(private val jasperReportsService: JasperReportsSer
     private val envelope: JasperReport by lazy { jasperReportsService.compileReport("/reports/envelope.jrxml") }
     private val temporaryPass: JasperReport by lazy { jasperReportsService.compileReport("/reports/temporary-pass.jrxml") }
     private val envelopeAndTemporaryPass: JasperReport by lazy { jasperReportsService.compileReport("/reports/envelope-and-temporary-pass.jrxml") }
+    private val studentCard: JasperReport by lazy { jasperReportsService.compileReport("/reports/student-card.jrxml") }
 
     fun generateSettlementReport(
         settlementReportDto: SettlementReportDto,
@@ -96,6 +98,24 @@ class ReportsGeneratorService(private val jasperReportsService: JasperReportsSer
 
             val jasperPrint = JasperFillManager.fillReport(
                 envelopeAndTemporaryPass,
+                parameters,
+                JREmptyDataSource(1)
+            )
+
+            jasperReportsService.exportToPdf(jasperPrint)
+        } catch (e: Exception) {
+            throw RuntimeException("Error generating report", e)
+        }
+    }
+
+    fun generateStudentCard(
+        studentCardDto: StudentCardDto,
+    ): ByteArray {
+        return try {
+            val parameters = studentCardDto.toMap()
+
+            val jasperPrint = JasperFillManager.fillReport(
+                studentCard,
                 parameters,
                 JREmptyDataSource(1)
             )
