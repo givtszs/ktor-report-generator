@@ -2,6 +2,11 @@
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student-card" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b059096-c282-49f2-b153-63d7349bf501">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="FamilyMembers" uuid="8b5e3e35-0373-4b06-9b45-2bd95312d892">
+		<field name="name" class="java.lang.String"/>
+		<field name="type" class="java.lang.String"/>
+		<field name="phoneNumber" class="java.lang.String"/>
+	</subDataset>
 	<parameter name="faculty" class="java.lang.String"/>
 	<parameter name="firstName" class="java.lang.String"/>
 	<parameter name="secondName" class="java.lang.String"/>
@@ -21,6 +26,7 @@
 	<parameter name="passportIssuer" class="java.lang.String"/>
 	<parameter name="profilePictureUrl" class="java.lang.String"/>
 	<parameter name="familyMembers" class="java.util.List"/>
+
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -324,16 +330,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</rectangle>
-			<rectangle>
-				<reportElement x="0" y="485" width="150" height="20" uuid="c7e15fde-29a8-4aeb-9c11-1b2a04370512">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="150" y="485" width="405" height="20" uuid="375a234f-776f-4a3f-89af-84e5d90b793a">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</rectangle>
+<!--			<rectangle>-->
+<!--				<reportElement x="0" y="485" width="150" height="20" uuid="c7e15fde-29a8-4aeb-9c11-1b2a04370512">-->
+<!--					<property name="com.jaspersoft.studio.unit.width" value="px"/>-->
+<!--				</reportElement>-->
+<!--			</rectangle>-->
+<!--			<rectangle>-->
+<!--				<reportElement x="150" y="485" width="405" height="20" uuid="375a234f-776f-4a3f-89af-84e5d90b793a">-->
+<!--					<property name="com.jaspersoft.studio.unit.width" value="px"/>-->
+<!--				</reportElement>-->
+<!--			</rectangle>-->
 			<rectangle>
 				<reportElement x="0" y="602" width="280" height="20" uuid="7f902fbf-8070-49be-84ad-88e4e6daaf04">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -766,6 +772,51 @@
 				</textElement>
 				<text><![CDATA[Члени родини]]></text>
 			</staticText>
+
+			<componentElement>
+				<reportElement x="0" y="485" width="555" height="30" uuid="49e96af1-24cc-4c40-bb44-c5981811628c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+						 xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd"
+						 printOrder="Vertical">
+					<datasetRun subDataset="FamilyMembers" uuid="15f6d107-1a8a-425b-bbbe-42c25a752157">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{familyMembers})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="555">
+
+						<!-- Left Column: Type -->
+						<rectangle>
+							<reportElement x="0" y="0" width="150" height="20" uuid="c7e15fde-29a8-4aeb-9c11-1b2a04370512">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+						</rectangle>
+						<textField>
+							<reportElement x="0" y="0" width="150" height="20" uuid="d1176c41-aa39-4578-9e26-96ccc5073ef3"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="14"/>
+								<paragraph leftIndent="4" rightIndent="4"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+						</textField>
+
+						<!-- Right Column: Name + Phone Number -->
+						<rectangle>
+							<reportElement x="150" y="0" width="405" height="20" uuid="375a234f-776f-4a3f-89af-84e5d90b793a">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+						</rectangle>
+						<textField>
+							<reportElement x="150" y="0" width="405" height="20" uuid="d6da7484-0ea7-4bd5-84cd-c7952413e20e"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="14" isBold="true"/>
+								<paragraph leftIndent="4" rightIndent="4"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{name} + ", " + $F{phoneNumber}]]></textFieldExpression>
+						</textField>
+
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+
 			<staticText>
 				<reportElement x="0" y="602" width="280" height="20" uuid="9b8d13d2-c214-4870-bcf8-690ef27cf2f4">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
@@ -922,7 +973,9 @@
 					<font fontName="Times New Roman" size="14" isBold="true"/>
 					<paragraph leftIndent="4" rightIndent="4"/>
 				</textElement>
-				<textFieldExpression><![CDATA[IF($P{passportSeries} != null,$P{passportSeries},$P{passportNumber})]]></textFieldExpression>
+<!--				<textFieldExpression><![CDATA[IF($P{passportSeries} != null,$P{passportSeries},$P{passportNumber})]]></textFieldExpression>-->
+<!--				<textFieldExpression><![CDATA[$P{passportSeries} + " " + $P{passportNumber}]]></textFieldExpression>-->
+				<textFieldExpression><![CDATA[$P{passportSeries} != null ? $P{passportSeries} : $P{passportNumber}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
 				<reportElement x="150" y="295" width="405" height="20" uuid="ac920e8b-51ea-40dd-9f4e-6f0ca578636c">
@@ -1032,7 +1085,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{faculty}]]></textFieldExpression>
 			</textField>
-			<image>
+			<image vAlign="Middle">
 				<reportElement x="0" y="0" width="80" height="105" uuid="34d506a3-e7ef-4e6e-a48f-1c120f26db44"/>
 				<imageExpression><![CDATA[$P{profilePictureUrl}]]></imageExpression>
 			</image>
