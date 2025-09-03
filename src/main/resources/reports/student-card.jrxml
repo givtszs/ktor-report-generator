@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student-card" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b059096-c282-49f2-b153-63d7349bf501">
     <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
     <subDataset name="FamilyMembers" uuid="8b5e3e35-0373-4b06-9b45-2bd95312d892">
-        <field name="name" class="java.lang.String"/>
+        <field name="fullName" class="java.lang.String"/>
         <field name="type" class="java.lang.String"/>
         <field name="phoneNumber" class="java.lang.String"/>
     </subDataset>
@@ -792,7 +792,7 @@
                                 <font fontName="Times New Roman" size="14" isBold="true"/>
                                 <paragraph leftIndent="4" rightIndent="4"/>
                             </textElement>
-                            <textFieldExpression><![CDATA[$F{name} + ", " + $F{phoneNumber}]]></textFieldExpression>
+                            <textFieldExpression><![CDATA[$F{fullName} + ", " + $F{phoneNumber}]]></textFieldExpression>
                         </textField>
                     </jr:listContents>
                 </jr:list>
