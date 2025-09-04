@@ -16,7 +16,7 @@ class ReportsGeneratorService(private val jasperReportsService: JasperReportsSer
     private val envelope: JasperReport by lazy { jasperReportsService.compileReport("/reports/envelope.jrxml") }
     private val temporaryPass: JasperReport by lazy { jasperReportsService.compileReport("/reports/temporary-pass.jrxml") }
     private val envelopeAndTemporaryPass: JasperReport by lazy { jasperReportsService.compileReport("/reports/envelope-and-temporary-pass.jrxml") }
-    private val studentCard: JasperReport by lazy { jasperReportsService.compileReport("/reports/student-card.jrxml") }
+    private val studentCard: JasperReport by lazy { jasperReportsService.compileReport("/reports/student-card-new.jrxml") }
 
     fun generateSettlementReport(
         settlementReportDto: SettlementReportDto,
