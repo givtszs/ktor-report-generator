@@ -8,7 +8,7 @@ data class TemporaryPassDto(
     val faculty: String,
     val dormitoryNumber: String,
     val roomNumber: String,
-    val profilePictureUrl: String,
+    val profilePictureUrl: String?,
     val logoUrl: String,
 ) {
     fun toMap() = mapOf(
