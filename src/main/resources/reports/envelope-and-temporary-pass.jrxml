@@ -194,6 +194,9 @@
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
             </rectangle>
+            <rectangle>
+                <reportElement x="366" y="230" width="99" height="25" uuid="a168c4e5-b118-4b96-ae85-563e311ba214"/>
+            </rectangle>
             <staticText>
                 <reportElement x="366" y="230" width="99" height="25" uuid="2ecf3c0c-4db6-4bfe-aa5b-49d95c79d925">
                     <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -433,6 +436,7 @@
                 </reportElement>
                 <textElement>
                     <font fontName="Times New Roman" size="14"/>
+                    <paragraph leftIndent="4"/>
                 </textElement>
                 <text><![CDATA[Гуртожиток:]]></text>
             </staticText>
@@ -466,6 +470,7 @@
                 </reportElement>
                 <textElement>
                     <font fontName="Times New Roman" size="14"/>
+                    <paragraph leftIndent="4"/>
                 </textElement>
                 <text><![CDATA[Кімната:]]></text>
             </staticText>

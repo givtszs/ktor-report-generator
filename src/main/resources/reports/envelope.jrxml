@@ -16,7 +16,7 @@
     <parameter name="addressApartment" class="java.lang.String"/>
     <parameter name="profilePictureUrl" class="java.lang.String"/>
     <background>
-        <band splitType="Stretch"/>
+        <band height="35" splitType="Stretch"/>
     </background>
     <detail>
         <band height="300" splitType="Stretch">
@@ -182,16 +182,6 @@
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
             </rectangle>
-            <staticText>
-                <reportElement x="432" y="230" width="99" height="25" uuid="2ecf3c0c-4db6-4bfe-aa5b-49d95c79d925">
-                    <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-                </reportElement>
-                <textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
-                    <font fontName="Times New Roman" size="14"/>
-                    <paragraph rightIndent="4"/>
-                </textElement>
-                <text><![CDATA[Квартира:]]></text>
-            </staticText>
             <textField textAdjust="ScaleFont">
                 <reportElement x="281" y="5" width="398" height="25" uuid="3f059b45-d5bd-4d32-9ea8-a28ef8c93f6a">
                     <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
@@ -332,6 +322,19 @@
                 </reportElement>
                 <imageExpression><![CDATA[$P{profilePictureUrl}]]></imageExpression>
             </image>
+            <rectangle>
+                <reportElement x="432" y="230" width="99" height="25" uuid="b2a685d8-9590-4251-9e6f-a745f1bff13c"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="432" y="230" width="99" height="25" uuid="2ecf3c0c-4db6-4bfe-aa5b-49d95c79d925">
+                    <property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+                    <font fontName="Times New Roman" size="14"/>
+                    <paragraph rightIndent="4"/>
+                </textElement>
+                <text><![CDATA[Квартира:]]></text>
+            </staticText>
         </band>
     </detail>
 </jasperReport>
